@@ -1,2 +1,2 @@
 # Vision Testing
-Description v2
+Testing object detection
