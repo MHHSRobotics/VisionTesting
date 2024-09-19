@@ -6,9 +6,12 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
+import frc.robot.Subsystems.Vision;
 
 public class RobotContainer {
+  private Vision vision;
   public RobotContainer() {
+    vision=new Vision();
     configureBindings();
   }
 
