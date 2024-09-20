@@ -1,5 +1,6 @@
 package frc.robot.Subsystems;
 import org.photonvision.PhotonCamera;
+import org.photonvision.PhotonUtils;
 import org.photonvision.targeting.PhotonPipelineResult;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -12,7 +13,8 @@ public class Vision extends SubsystemBase{
     public void periodic(){
         PhotonPipelineResult res=cam.getLatestResult();
         if(res.hasTargets()){
-            SmartDashboard.putNumber("Yaw",res.getBestTarget().getYaw());
+            double distance = PhotonUtils.calculateDistanceToTargetMeters(1, 0, -0.7854, res.getBestTarget().getPitch()*(3.14159/180));
+            System.out.println(distance);
         }
     }
 }
